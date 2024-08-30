@@ -3,7 +3,6 @@ import "react-data-grid/lib/styles.css";
 import { useCallback, useMemo, useState } from "react";
 
 import DataGrid, { type Column, type SortColumn } from "react-data-grid";
-// import type { Props } from "./types";
 
 interface Row {
   readonly id: number;
