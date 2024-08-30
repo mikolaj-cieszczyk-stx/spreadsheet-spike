@@ -1,5 +1,6 @@
 ---
-import ReactGrid from "../components/ReactSpreadsheet/ReactGrid/ReactGrid";
+import ReactGrid from "../components/ReactGrid/ReactGrid";
+import ReactDataGrid from "../components/ReactDataGrid/ReactDataGrid";
 import ReactSpreadsheet from "../components/ReactSpreadsheet/ReactSpreadsheet";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -7,7 +8,8 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Welcome to Astro.">
   <main>
     <!-- <ReactSpreadsheet client:load /> -->
-    <ReactGrid client:load />
+    <!-- <ReactGrid client:load /> -->
+    <ReactDataGrid client:load />
   </main>
 </Layout>
 
@@ -15,7 +17,7 @@ import Layout from "../layouts/Layout.astro";
   html {
     background-color: white;
   }
-  main {
+  /* main {
     padding: 1rem;
-  }
+  } */
 </style>
