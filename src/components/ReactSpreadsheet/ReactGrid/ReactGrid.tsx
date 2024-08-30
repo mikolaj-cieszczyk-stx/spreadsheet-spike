@@ -7,8 +7,8 @@ import {
   type MenuOption,
   type Row,
   type TextCell,
-  type SelectionMode, // Upewnij się, że importujesz SelectionMode
-  type CellLocation, // Importuj CellLocation dla brakującego parametru
+  type SelectionMode,
+  type CellLocation,
 } from "@silevis/reactgrid";
 import "@silevis/reactgrid/styles.css";
 import * as React from "react";
@@ -99,8 +99,8 @@ const applyChangesToPeople = (
 ): Person[] => {
   changes.forEach((change) => {
     if (change.newCell.type === "text") {
-      const personIndex = change.rowId as number; // Zakładamy, że rowId jest liczbą
-      const fieldName = change.columnId as keyof Person; // Rzutowanie na keyof Person
+      const personIndex = change.rowId as number;
+      const fieldName = change.columnId as keyof Person;
       prevPeople[personIndex][fieldName] = change.newCell.text;
     }
   });
@@ -122,7 +122,7 @@ export default function ReactGrid() {
     selectedColIds: Id[],
     selectionMode: SelectionMode,
     menuOptions: MenuOption[],
-    selectedRanges: CellLocation[][] // Dodaj brakujący parametr
+    selectedRanges: CellLocation[][]
   ): MenuOption[] => {
     if (selectionMode === "row") {
       menuOptions = [
