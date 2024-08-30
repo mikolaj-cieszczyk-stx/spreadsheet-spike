@@ -1,20 +1,21 @@
 ---
+import ReactGrid from "../components/ReactSpreadsheet/ReactGrid/ReactGrid";
 import ReactSpreadsheet from "../components/ReactSpreadsheet/ReactSpreadsheet";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main><ReactSpreadsheet client:load /></main>
+  <main>
+    <!-- <ReactSpreadsheet client:load /> -->
+    <ReactGrid client:load />
+  </main>
 </Layout>
 
 <style>
+  html {
+    background-color: white;
+  }
   main {
-    margin: auto;
     padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
   }
 </style>
