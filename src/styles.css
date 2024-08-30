@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dsg-cell {
+  justify-content: center !important;
+}
+
+.dsg-cell-header {
+  font-size: 14px;
+  text-wrap: wrap;
+}
