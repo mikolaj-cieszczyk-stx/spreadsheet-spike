@@ -5,7 +5,6 @@ import {
   type ContextMenuItem,
 } from "react-datasheet-grid";
 
-// Funkcja renderująca itemy w menu kontekstowym, w tym opcję "Merge cells"
 const customRenderItem = (item: ContextMenuItem) => {
   switch (item.type) {
     case "CUT":
@@ -18,14 +17,13 @@ const customRenderItem = (item: ContextMenuItem) => {
       return <>Usuń wiersz</>;
     case "INSERT_ROW_BELLOW":
       return <>Wstaw wiersz poniżej</>;
-    case "MERGE_CELLS": // Nowa opcja "Merge cells"
+    case "MERGE_CELLS":
       return <>Scal komórki</>;
     default:
       return <>{item.type}</>;
   }
 };
 
-// Tworzenie komponentu ContextMenu z customową logiką
 function CustomContextMenu({
   clientX,
   clientY,
@@ -47,10 +45,8 @@ function CustomContextMenu({
   );
 
   useEffect(() => {
-    // Dodanie event listenera przy montowaniu
     document.addEventListener("mousedown", onClickOutside);
 
-    // Usunięcie event listenera przy odmontowaniu
     return () => {
       document.removeEventListener("mousedown", onClickOutside);
     };
