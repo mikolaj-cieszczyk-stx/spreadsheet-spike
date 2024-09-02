@@ -51,7 +51,6 @@ const CustomTableWithMergingPossibility: React.FC = ({}) => {
         {tableData.cells.map((row, rowIndex) => (
           <tr key={rowIndex}>
             {row.map((cell, colIndex) => {
-              // Sprawdź, czy to jest "master" komórka zmergowanego obszaru
               const mergedRegion = tableData.mergedRegions.find(
                 (region) =>
                   region.masterCell[0] === rowIndex &&
@@ -70,9 +69,8 @@ const CustomTableWithMergingPossibility: React.FC = ({}) => {
                 );
               }
 
-              // Sprawdź, czy to jest zmergowana komórka (ale nie "master")
               if (cell.isMerged && cell.masterCell) {
-                return null; // Nie renderuj komórki, bo jest pokryta przez zmergowany region
+                return null;
               }
 
               return <td key={colIndex}>{cell.value}</td>;
