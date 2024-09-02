@@ -93,6 +93,31 @@ const getRows = (people: Person[]): Row[] => [
   })),
 ];
 
+const headerRowWithSpan: Row = {
+  rowId: "header",
+  cells: [
+    { type: "header", text: "'Merged' column", colspan: 2 }, // Łączy kolumny "Name" i "Surname"
+    { type: "header", text: "Birth Data" },
+    { type: "header", text: "Phone" },
+    { type: "header", text: "Company" },
+    { type: "header", text: "Occupation" },
+  ],
+};
+
+const getRowsWithSpan = (people: Person[]): Row[] => [
+  headerRowWithSpan,
+  ...people.map<Row>((person, idx) => ({
+    rowId: idx,
+    cells: [
+      { type: "text", text: `${person.name} ${person.surname}`, colspan: 2 }, // Łączy dane z kolumn "Name" i "Surname"
+      { type: "date", date: person.birth },
+      { type: "number", value: person.mobile },
+      { type: "text", text: person.company },
+      { type: "text", text: person.occupation },
+    ],
+  })),
+];
+
 const applyChangesToPeople = (
   changes: CellChange[],
   prevPeople: Person[]
@@ -112,6 +137,7 @@ export default function ReactGrid() {
   const [columns] = React.useState<Column[]>(getColumns());
 
   const rows = getRows(people);
+  const rowsWithSpan = getRowsWithSpan(people);
 
   const handleChanges = (changes: CellChange[]) => {
     setPeople((prevPeople) => applyChangesToPeople(changes, prevPeople));
@@ -146,18 +172,36 @@ export default function ReactGrid() {
   };
 
   return (
-    <ReactGridComponent
-      rows={rows}
-      columns={columns}
-      stickyLeftColumns={1}
-      stickyRightColumns={1}
-      stickyTopRows={1}
-      stickyBottomRows={1}
-      enableFillHandle
-      enableRangeSelection
-      enableColumnSelection
-      onContextMenu={handleContextMenu}
-      onCellsChanged={handleChanges}
-    />
+    <div>
+      <ReactGridComponent
+        rows={rows}
+        columns={columns}
+        stickyLeftColumns={1}
+        stickyRightColumns={1}
+        stickyTopRows={1}
+        stickyBottomRows={1}
+        enableFillHandle
+        enableRangeSelection
+        enableColumnSelection
+        onContextMenu={handleContextMenu}
+        onCellsChanged={handleChanges}
+      />
+
+      <hr style={{ marginBlock: "2%" }} />
+
+      <ReactGridComponent
+        rows={rowsWithSpan}
+        columns={columns}
+        stickyLeftColumns={1}
+        stickyRightColumns={1}
+        stickyTopRows={1}
+        stickyBottomRows={1}
+        enableFillHandle
+        enableRangeSelection
+        enableColumnSelection
+        onContextMenu={handleContextMenu}
+        onCellsChanged={handleChanges}
+      />
+    </div>
   );
 }
