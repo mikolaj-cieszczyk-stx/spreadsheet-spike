@@ -1,8 +1,11 @@
 import "react-data-grid/lib/styles.css";
-
 import { useCallback, useMemo, useState } from "react";
-
-import DataGrid, { type Column, type SortColumn } from "react-data-grid";
+import DataGrid, {
+  type Column,
+  type SortColumn,
+  type RenderRowProps,
+  type ColSpanArgs,
+} from "react-data-grid";
 
 interface Row {
   readonly id: number;
@@ -32,6 +35,18 @@ function createRows(): Row[] {
   return rows;
 }
 
+function getColSpan(args: ColSpanArgs<Row, unknown>): number | undefined {
+  if (args.type === "ROW") {
+    if (args.row.id === 2) {
+      console.log(args);
+
+      return 2; // Rozciąga komórkę 'task' na dwie kolumny, tylko dla drugiego wiersza
+    }
+  }
+
+  return undefined;
+}
+
 const columns: Column<Row>[] = [
   {
     key: "id",
@@ -44,6 +59,7 @@ const columns: Column<Row>[] = [
     resizable: true,
     sortable: true,
     draggable: true,
+    colSpan: getColSpan,
   },
   {
     key: "priority",
