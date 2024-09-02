@@ -1,6 +1,5 @@
 import React from "react";
 
-// Definicja typów
 type CellData = {
   value: string | number | null;
   isMerged: boolean;
@@ -17,7 +16,6 @@ type TableData = {
   mergedRegions: MergedRegion[];
 };
 
-// Przykładowe dane tabeli
 const initialTableData: TableData = {
   cells: [
     [
