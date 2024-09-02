@@ -42,6 +42,12 @@ function getColSpan(args: ColSpanArgs<Row, unknown>): number | undefined {
 
       return 2; // Rozciąga komórkę 'task' na dwie kolumny, tylko dla drugiego wiersza
     }
+
+    if (args.row.id === 5) {
+      console.log(args);
+
+      return 3; // Rozciąga komórkę 'task' na dwie kolumny, tylko dla drugiego wiersza
+    }
   }
 
   return undefined;
