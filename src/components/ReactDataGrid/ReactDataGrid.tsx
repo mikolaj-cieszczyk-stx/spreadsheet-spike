@@ -40,13 +40,13 @@ function getColSpan(args: ColSpanArgs<Row, unknown>): number | undefined {
     if (args.row.id === 2) {
       console.log(args);
 
-      return 2; // Rozciąga komórkę 'task' na dwie kolumny, tylko dla drugiego wiersza
+      return 2; // Rozciąga komórkę o id === 2 na dwie kolumny
     }
 
     if (args.row.id === 5) {
       console.log(args);
 
-      return 3; // Rozciąga komórkę 'task' na dwie kolumny, tylko dla drugiego wiersza
+      return 3; // Rozciąga komórkę id === 5 na trzy kolumny
     }
   }
 
