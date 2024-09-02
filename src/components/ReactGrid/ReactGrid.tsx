@@ -101,7 +101,7 @@ const applyChangesToPeople = (
     if (change.newCell.type === "text") {
       const personIndex = change.rowId as number;
       const fieldName = change.columnId as keyof Person;
-      prevPeople[personIndex][fieldName] = change.newCell.text;
+      prevPeople[personIndex][fieldName] = change.newCell.text as never;
     }
   });
   return [...prevPeople];
