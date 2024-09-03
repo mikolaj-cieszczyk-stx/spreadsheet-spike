@@ -1,25 +1,27 @@
 ---
-import Links from "../components/Links";
-import ReactSpreadsheetComponent from "../components/ReactSpreadsheet/ReactSpreadsheet";
-import Layout from "../layouts/Layout.astro";
+import Links from '../components/Links'
+import ReactSpreadsheetComponent from '../components/ReactSpreadsheet/ReactSpreadsheet'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="react-grid"
   ><h1>react-spreadsheet</h1><Links
     links={{
-      npm: "https://www.npmjs.com/package/react-spreadsheet",
-      github: "https://github.com/iddan/react-spreadsheet#readme",
-      docs: "https://iddan.github.io/react-spreadsheet/",
+      npm: 'https://www.npmjs.com/package/react-spreadsheet',
+      github: 'https://github.com/iddan/react-spreadsheet#readme',
+      docs: 'https://iddan.github.io/react-spreadsheet/',
     }}
   />
 
- <h2>Meeting the requirements:</h2>
+  <h2>Meeting the requirements:</h2>
   <ul>
     <li><b><u>Very poor documentation</u></b></li>
-    <li style={{ color: 'red'}}><b>Virtualization:</b> No</li>
-    <li style={{ color: 'red'}}><b>Large data sets:</b> No optimization for large data sets</li>
+    <li style={{ color: 'red' }}><b>Virtualization:</b> No</li>
+    <li style={{ color: 'red' }}>
+      <b>Large data sets:</b> No optimization for large data sets
+    </li>
     <li><b>TypeScript:</b> Yes</li>
-    <li style={{ color: 'red'}}><b>Merge cells:</b> No</li>
+    <li style={{ color: 'red' }}><b>Merge cells:</b> No</li>
     <li>
       <b>Text formatting:</b> Likely only with CSS; documentation does not mention
       it
@@ -30,17 +32,21 @@ import Layout from "../layouts/Layout.astro";
       <b>Keyboard navigation:</b> Basic, you can navigate using arrow keys and copy
       content
     </li>
-    <li style={{ color: 'red'}}><b>Copy content as a table:</b> No</li>
+    <li style={{ color: 'red' }}><b>Copy content as a table:</b> No</li>
   </ul>
 
   <p>
-  <b>Opinion: </b> Overall, it is very limited. You generally have to write everything yourself. It could possibly serve as a foundation for writing something on your own, but in our case, it is not worth it.
-</p>
+    <b>Opinion: </b> Overall, it is very limited. You generally have to write everything
+    yourself. It could possibly serve as a foundation for writing something on your
+    own, but in our case, it is not worth it.
+  </p>
 
-<p style="color: green; text-align: center;">I don't even want to try to insert 1000x10000 data  - no virtualization here :)</p>
+  <p style="color: green; text-align: center;">
+    I don't even want to try to insert 1000x10000 data - no virtualization here
+    :)
+  </p>
 
-  <hr style={{ marginBlock: "2%" }} />
-
+  <hr style={{ marginBlock: '2%' }} />
 
   <ReactSpreadsheetComponent client:load /></Layout
 >

@@ -1,36 +1,40 @@
 ---
-import Links from "../components/Links";
-import ReactDatasheetGridComponent from "../components/ReactDatasheetGrid/ReactDatasheetGrid";
-import Layout from "../layouts/Layout.astro";
+import Links from '../components/Links'
+import ReactDatasheetGridComponent from '../components/ReactDatasheetGrid/ReactDatasheetGrid'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="react-grid"
   ><h1>react-datasheet-grid</h1><Links
     links={{
-      npm: "https://www.npmjs.com/package/react-datasheet-grid",
-      github: "https://github.com/nick-keller/react-datasheet-grid",
-      docs: "https://react-datasheet-grid.netlify.app/",
+      npm: 'https://www.npmjs.com/package/react-datasheet-grid',
+      github: 'https://github.com/nick-keller/react-datasheet-grid',
+      docs: 'https://react-datasheet-grid.netlify.app/',
     }}
-
   />
 
   <h2>Meeting the requirements:</h2>
 
-<ul>
-  <li><b>Virtualization:</b> Yes</li>
-  <li><b>Large data sets:</b> Virtualization</li>
-  <li><b>TypeScript:</b> Yes</li>
-  <li><b>Merge cells:</b> Pretty easy by colSpan</li>
-  <li><b>Text formatting:</b> Yes</li>
-  <li><b>Custom elements:</b> Yes</li>
-  <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
-  <li><b>Keyboard navigation:</b> Yes</li>
-  <li><b>Copy content as a table:</b> Yes</li>
-  <li><b>MIT:</b> Yes</li>
-</ul>
+  <ul>
+    <li><b>Virtualization:</b> Yes</li>
+    <li><b>Large data sets:</b> Virtualization</li>
+    <li><b>TypeScript:</b> Yes</li>
+    <li><b>Merge cells:</b> Pretty easy by colSpan</li>
+    <li><b>Text formatting:</b> Yes</li>
+    <li><b>Custom elements:</b> Yes</li>
+    <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
+    <li><b>Keyboard navigation:</b> Yes</li>
+    <li><b>Copy content as a table:</b> Yes</li>
+    <li><b>MIT:</b> Yes</li>
+  </ul>
 
-<p><b>Opinion: </b>So far, the most pleasant to work with. The most important things work out of the box. Overall, it meets all requirements. The features I added are wrapped in a quite user-friendly abstraction. Adding cell merging might be possible, but I couldn't achieve it in a short time, so this is something to check if needed.</p>
-
+  <p>
+    <b>Opinion: </b>So far, the most pleasant to work with. The most important
+    things work out of the box. Overall, it meets all requirements. The features
+    I added are wrapped in a quite user-friendly abstraction. Adding cell
+    merging might be possible, but I couldn't achieve it in a short time, so
+    this is something to check if needed.
+  </p>
 
   <ReactDatasheetGridComponent client:load /></Layout
 >

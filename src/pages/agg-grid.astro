@@ -1,19 +1,18 @@
 ---
-import AGGridComponent from "../components/AGGrid/AGGrid";
-import Links from "../components/Links";
-import Layout from "../layouts/Layout.astro";
+import AGGridComponent from '../components/AGGrid/AGGrid'
+import Links from '../components/Links'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="agg grid"
   ><h1>agg grid</h1>
   <Links
     links={{
-      npm: "https://www.npmjs.com/package/ag-grid-react",
-      github: "https://github.com/ag-grid/ag-grid",
-      docs: "https://www.ag-grid.com/react-data-grid/getting-started/",
+      npm: 'https://www.npmjs.com/package/ag-grid-react',
+      github: 'https://github.com/ag-grid/ag-grid',
+      docs: 'https://www.ag-grid.com/react-data-grid/getting-started/',
     }}
   />
-
 
   <ul>
     <li><b>Virtualization:</b> Yes</li>
@@ -24,10 +23,17 @@ import Layout from "../layouts/Layout.astro";
     <li><b>Custom elements:</b> Yes</li>
     <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
     <li><b>Keyboard navigation:</b> Yes</li>
-    <li><b>Copy content as a table:</b> I was only able to implement copying whole rows. Copying a selection is possible in the paid version, but I believe it can be implemented independently.</li>
+    <li>
+      <b>Copy content as a table:</b> I was only able to implement copying whole
+      rows. Copying a selection is possible in the paid version, but I believe it
+      can be implemented independently.
+    </li>
     <li><b>MIT:</b> Yes</li>
   </ul>
 
-<p><b>Opinion: </b>Good DX. There is a chance that the free version will be sufficient for us.</p>
+  <p>
+    <b>Opinion: </b>Good DX. There is a chance that the free version will be
+    sufficient for us.
+  </p>
   <AGGridComponent client:load /></Layout
 >

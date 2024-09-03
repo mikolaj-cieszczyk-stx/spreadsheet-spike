@@ -1,31 +1,31 @@
-import { Button, Link } from "@nextui-org/react";
-import React from "react";
+import { Button, Link } from '@nextui-org/react'
+import React from 'react'
 
 interface NavProps {
   items: {
-    title: string;
-    url: string;
-  }[];
+    title: string
+    url: string
+  }[]
 }
 
 const Nav: React.FC<NavProps> = ({ items }) => {
   return (
     <div>
-      <div style={{ display: "flex", marginBottom: "10px" }}>
+      <div style={{ display: 'flex', marginBottom: '10px' }}>
         {items.map((item, index) => (
           <div key={index}>
             <Link style={{}} href={item.url}>
               <Button
                 style={{
-                  color: "white",
-                  background: "#0064d7",
+                  color: 'white',
+                  background: '#0064d7',
                   border: 0,
-                  borderRadius: "4px",
-                  padding: "8px",
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  cursor: "pointer",
+                  borderRadius: '4px',
+                  padding: '8px',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  marginRight: '10px',
+                  cursor: 'pointer',
                 }}
                 key={index}
               >
@@ -36,7 +36,7 @@ const Nav: React.FC<NavProps> = ({ items }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

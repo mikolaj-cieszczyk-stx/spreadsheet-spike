@@ -1,22 +1,24 @@
 ---
-import Links from "../components/Links";
-import ReactDataGridComponent from "../components/ReactDataGrid/ReactDataGrid";
-import Layout from "../layouts/Layout.astro";
+import Links from '../components/Links'
+import ReactDataGridComponent from '../components/ReactDataGrid/ReactDataGrid'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="react-grid"
   ><h1>react-data-grid</h1><Links
     links={{
-      npm: "https://www.npmjs.com/package/react-data-grid",
-      github: "https://github.com/adazzle/react-data-grid",
-      docs: "https://adazzle.github.io/react-data-grid/#/common-features",
+      npm: 'https://www.npmjs.com/package/react-data-grid',
+      github: 'https://github.com/adazzle/react-data-grid',
+      docs: 'https://adazzle.github.io/react-data-grid/#/common-features',
     }}
-
   />
 
   <h2>Meeting the requirements:</h2>
   <ul>
-    <li>Not very dev-friendly form of documentation - live examples + code on the repository, without much explanation</li>
+    <li>
+      Not very dev-friendly form of documentation - live examples + code on the
+      repository, without much explanation
+    </li>
     <li><b>Virtualization:</b> Yes</li>
     <li><b>Large data sets:</b> Virtualization</li>
     <li><b>TypeScript:</b> Yes</li>
@@ -30,11 +32,12 @@ import Layout from "../layouts/Layout.astro";
   </ul>
 
   <p>
-    <b>Opinion: </b> Overall, it meets all requirements (except for merging). I see it more as an advanced table rather than a spreadsheet. An impressively large number of features.
+    <b>Opinion: </b> Overall, it meets all requirements (except for merging). I see
+    it more as an advanced table rather than a spreadsheet. An impressively large
+    number of features.
   </p>
 
-
-    <hr style={{ marginBlock: "2%" }} />
+  <hr style={{ marginBlock: '2%' }} />
 
   <ReactDataGridComponent client:load /></Layout
 >

@@ -1,16 +1,16 @@
 ---
-import Links from "../components/Links";
-import ReactGridComponent from "../components/ReactGrid/ReactGrid";
-import Layout from "../layouts/Layout.astro";
+import Links from '../components/Links'
+import ReactGridComponent from '../components/ReactGrid/ReactGrid'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="react-grid"
   ><h1>react-grid</h1>
   <Links
     links={{
-      npm: "https://www.npmjs.com/package/@silevis/reactgrid",
-      github: "https://github.com/silevis/reactgrid",
-      docs: "https://reactgrid.com/examples/?utm_source=github&utm_medium=readme",
+      npm: 'https://www.npmjs.com/package/@silevis/reactgrid',
+      github: 'https://github.com/silevis/reactgrid',
+      docs: 'https://reactgrid.com/examples/?utm_source=github&utm_medium=readme',
     }}
   />
 
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
     <li><b>Virtualization:</b> Yes</li>
     <li><b>Large data sets:</b> Virtualization</li>
     <li><b>TypeScript:</b> Yes</li>
-    <li style={{ color: 'red'}}><b>Merge cells:</b> No</li>
+    <li style={{ color: 'red' }}><b>Merge cells:</b> No</li>
     <li><b>Text formatting:</b> Yes</li>
     <li><b>Custom elements:</b> Yes</li>
     <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
@@ -29,12 +29,21 @@ import Layout from "../layouts/Layout.astro";
     <li><b>Copy content as a table:</b> Yes</li>
   </ul>
 
-   <p><b>Opinion: </b>Overall, at first glance, it seems quite decent to work with. Not amazing or even very good—just okay. It looks like something that can be customized to fit individual needs. It offers quite a few features provided by the developers.</p>
+  <p>
+    <b>Opinion: </b>Overall, at first glance, it seems quite decent to work
+    with. Not amazing or even very good—just okay. It looks like something that
+    can be customized to fit individual needs. It offers quite a few features
+    provided by the developers.
+  </p>
 
-  <p style={{ color: 'red', textAlign: 'center'}}><u>The app crashed when generating 1000x10,000 data so I left the data small. This is a hint that the library is not very well optimized for large data sets.</u></p>
+  <p style={{ color: 'red', textAlign: 'center' }}>
+    <u
+      >The app crashed when generating 1000x10,000 data so I left the data
+      small. This is a hint that the library is not very well optimized for
+      large data sets.</u>
+  </p>
 
-
-  <hr style={{ marginBlock: "2%" }} />
+  <hr style={{ marginBlock: '2%' }} />
 
   <ReactGridComponent client:load /></Layout
 >

@@ -4,11 +4,11 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-} from "@nextui-org/react";
+} from '@nextui-org/react'
 
 export default function Select() {
   return (
-    <Dropdown style={{ zIndex: "1000" }}>
+    <Dropdown style={{ zIndex: '1000' }}>
       <DropdownTrigger>
         <Button variant="bordered">Open Menu</Button>
       </DropdownTrigger>
@@ -21,5 +21,5 @@ export default function Select() {
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
-  );
+  )
 }
