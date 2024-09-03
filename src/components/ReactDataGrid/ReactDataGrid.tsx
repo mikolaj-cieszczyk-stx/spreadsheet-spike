@@ -3,102 +3,68 @@ import { useCallback, useMemo, useState } from "react";
 import DataGrid, {
   type Column,
   type SortColumn,
-  type RenderRowProps,
   type ColSpanArgs,
 } from "react-data-grid";
 
 interface Row {
   readonly id: number;
-  readonly task: string;
-  readonly complete: number;
-  readonly priority: string;
-  readonly issueType: string;
+  [key: string]: string | number;
 }
 
-function createRows(): Row[] {
+function createRows(numRows: number, numColumns: number): Row[] {
   const rows: Row[] = [];
 
-  for (let i = 1; i < 500; i++) {
-    rows.push({
-      id: i,
-      task: `Task ${i}`,
-      complete: Math.min(100, Math.round(Math.random() * 110)),
-      priority: ["Critical", "High", "Medium", "Low"][
-        Math.round(Math.random() * 3)
-      ],
-      issueType: ["Bug", "Improvement", "Epic", "Story"][
-        Math.round(Math.random() * 3)
-      ],
-    });
+  for (let i = 0; i < numRows; i++) {
+    const row: Row = { id: i };
+    for (let j = 0; j < numColumns; j++) {
+      row[`Column${j}`] = `Row${i}Col${j}`;
+    }
+    rows.push(row);
   }
 
   return rows;
 }
 
+function createColumns(numColumns: number): Column<Row>[] {
+  return Array.from({ length: numColumns }, (_, index) => ({
+    key: `Column${index}`,
+    name: `Column ${index + 1}`,
+    resizable: true,
+    sortable: true,
+    draggable: true,
+    colSpan: getColSpan,
+  }));
+}
+
 function getColSpan(args: ColSpanArgs<Row, unknown>): number | undefined {
   if (args.type === "ROW") {
     if (args.row.id === 2) {
-      return 2; // Rozciąga komórkę o id === 2 na dwie kolumny
+      return 2;
     }
 
     if (args.row.id === 5) {
-      return 3; // Rozciąga komórkę id === 5 na trzy kolumny
+      return 3;
     }
   }
 
   return undefined;
 }
 
-const columns: Column<Row>[] = [
-  {
-    key: "id",
-    name: "ID",
-    width: 80,
-  },
-  {
-    key: "task",
-    name: "Title",
-    resizable: true,
-    sortable: true,
-    draggable: true,
-    colSpan: getColSpan,
-  },
-  {
-    key: "priority",
-    name: "Priority",
-    resizable: true,
-    sortable: true,
-    draggable: true,
-  },
-  {
-    key: "issueType",
-    name: "Issue Type",
-    resizable: true,
-    sortable: true,
-    draggable: true,
-  },
-  {
-    key: "complete",
-    name: "% Complete",
-    resizable: true,
-    sortable: true,
-    draggable: true,
-  },
-];
-
 export default function App() {
-  const [rows] = useState(createRows);
+  const [rows] = useState(() => createRows(10000, 1000));
   const [columnsOrder, setColumnsOrder] = useState((): readonly number[] =>
-    columns.map((_, index) => index)
+    createColumns(1000).map((_, index) => index)
   );
   const [sortColumns, setSortColumns] = useState<readonly SortColumn[]>([]);
+  const columns = useMemo(() => createColumns(1000), []);
+
   const onSortColumnsChange = useCallback((sortColumns: SortColumn[]) => {
     setSortColumns(sortColumns.slice(-1));
   }, []);
 
   const reorderedColumns = useMemo(() => {
     return columnsOrder.map((index) => columns[index]);
-  }, [columnsOrder]);
+  }, [columnsOrder, columns]);
 
   const sortedRows = useMemo((): readonly Row[] => {
     if (sortColumns.length === 0) return rows;
@@ -106,19 +72,14 @@ export default function App() {
 
     let sortedRows: Row[] = [...rows];
 
-    switch (columnKey) {
-      case "task":
-      case "priority":
-      case "issueType":
-        sortedRows = sortedRows.sort((a, b) =>
-          a[columnKey].localeCompare(b[columnKey])
-        );
-        break;
-      case "complete":
-        sortedRows = sortedRows.sort((a, b) => a[columnKey] - b[columnKey]);
-        break;
-      default:
+    if (columnKey !== "id") {
+      sortedRows = sortedRows.sort((a, b) =>
+        typeof a[columnKey] === "string"
+          ? (a[columnKey] as string).localeCompare(b[columnKey] as string)
+          : (a[columnKey] as number) - (b[columnKey] as number)
+      );
     }
+
     return direction === "DESC" ? sortedRows.reverse() : sortedRows;
   }, [rows, sortColumns]);
 

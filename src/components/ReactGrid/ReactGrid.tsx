@@ -1,14 +1,12 @@
 import {
   ReactGrid as ReactGridComponent,
-  type Cell,
   type CellChange,
+  type CellLocation,
   type Column,
   type Id,
   type MenuOption,
   type Row,
-  type TextCell,
   type SelectionMode,
-  type CellLocation,
 } from "@silevis/reactgrid";
 import "@silevis/reactgrid/styles.css";
 import * as React from "react";
@@ -96,7 +94,7 @@ const getRows = (people: Person[]): Row[] => [
 const headerRowWithSpan: Row = {
   rowId: "header",
   cells: [
-    { type: "header", text: "'Merged' column", colspan: 2 }, // Łączy kolumny "Name" i "Surname"
+    { type: "header", text: "'Merged' column", colspan: 2 },
     { type: "header", text: "Birth Data" },
     { type: "header", text: "Phone" },
     { type: "header", text: "Company" },
@@ -109,7 +107,7 @@ const getRowsWithSpan = (people: Person[]): Row[] => [
   ...people.map<Row>((person, idx) => ({
     rowId: idx,
     cells: [
-      { type: "text", text: `${person.name} ${person.surname}`, colspan: 2 }, // Łączy dane z kolumn "Name" i "Surname"
+      { type: "text", text: `${person.name} ${person.surname}`, colspan: 2 },
       { type: "date", date: person.birth },
       { type: "number", value: person.mobile },
       { type: "text", text: person.company },

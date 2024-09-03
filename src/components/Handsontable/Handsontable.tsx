@@ -29,7 +29,6 @@ const HandsontableComponent = () => {
       filters={true}
       rowHeaders={true}
       headerClassName="htLeft"
-      // beforeRenderer={addClassesToRows}
       manualRowMove={true}
       autoWrapRow={true}
       navigableHeaders={true}
