@@ -10,15 +10,24 @@ const Links: React.FC<LinksProps> = ({ links }) => {
     <div style={{ marginBottom: "40px" }}>
       <ul>
         <li>
-          <b>NPM:</b> <Link href={links.npm}>{links.npm}</Link>
+          <b>NPM:</b>{" "}
+          <Link rel="noopener noreferrer" target="_blank" href={links.npm}>
+            {links.npm}
+          </Link>
         </li>
 
         <li>
-          <b>Github:</b> <Link href={links.npm}>{links.github}</Link>
+          <b>Github:</b>{" "}
+          <Link rel="noopener noreferrer" target="_blank" href={links.github}>
+            {links.github}
+          </Link>
         </li>
 
         <li>
-          <b>Docs:</b> <Link href={links.npm}>{links.docs}</Link>
+          <b>Docs:</b>{" "}
+          <Link rel="noopener noreferrer" target="_blank" href={links.docs}>
+            {links.docs}
+          </Link>
         </li>
       </ul>
     </div>

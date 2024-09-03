@@ -11,6 +11,29 @@ import Layout from "../layouts/Layout.astro";
       github: "https://github.com/adazzle/react-data-grid",
       docs: "https://adazzle.github.io/react-data-grid/#/common-features",
     }}
-    ,
-  /><ReactDataGridComponent client:load /></Layout
+
+  />
+
+  <h2>Meeting the requirements:</h2>
+  <ul>
+    <li>Not very dev-friendly form of documentation - live examples + code on the repository, without much explanation</li>
+    <li><b>Virtualization:</b> Yes</li>
+    <li><b>Large data sets:</b> Virtualization</li>
+    <li><b>TypeScript:</b> Yes</li>
+    <li style={{ color: 'red'}}><b>Merge cells:</b> No</li>
+    <li><b>Text formatting:</b> Yes</li>
+    <li><b>Custom elements:</b> Yes</li>
+    <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
+    <li><b>Keyboard navigation:</b> Yes</li>
+    <li><b>Copy content as a table:</b> Yes</li>
+    <li><b>MIT:</b> Yes</li>
+  </ul>
+
+  <p>
+    <b>Opinion: </b> Overall, it meets all requirements (except for merging). I see it more as an advanced table rather than a spreadsheet. An impressively large number of features.
+  </p>
+
+    <hr style={{ marginBlock: "2%" }} />
+
+  <ReactDataGridComponent client:load /></Layout
 >

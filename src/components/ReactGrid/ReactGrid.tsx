@@ -173,6 +173,8 @@ export default function ReactGrid() {
 
   return (
     <div>
+      <h3>regular component</h3>
+
       <ReactGridComponent
         rows={rows}
         columns={columns}
@@ -187,7 +189,7 @@ export default function ReactGrid() {
         onCellsChanged={handleChanges}
       />
 
-      <hr style={{ marginBlock: "2%" }} />
+      <h3>with colSpan</h3>
 
       <ReactGridComponent
         rows={rowsWithSpan}

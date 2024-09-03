@@ -12,6 +12,22 @@ import Layout from "../layouts/Layout.astro";
       github: "https://github.com/ag-grid/ag-grid",
       docs: "https://www.ag-grid.com/react-data-grid/getting-started/",
     }}
-    ,
-  /><AGGridComponent client:load /></Layout
+  />
+
+
+  <ul>
+    <li><b>Virtualization:</b> Yes</li>
+    <li><b>Large data sets:</b> Virtualization</li>
+    <li><b>TypeScript:</b> Yes</li>
+    <li><b>Merge cells:</b> Pretty easy by colSpan</li>
+    <li><b>Text formatting:</b> Yes</li>
+    <li><b>Custom elements:</b> Yes</li>
+    <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
+    <li><b>Keyboard navigation:</b> Yes</li>
+    <li><b>Copy content as a table:</b> I was only able to implement copying whole rows. Copying a selection is possible in the paid version, but I believe it can be implemented independently.</li>
+    <li><b>MIT:</b> Yes</li>
+  </ul>
+
+<p><b>Opinion: </b>Good DX. There is a chance that the free version will be sufficient for us.</p>
+  <AGGridComponent client:load /></Layout
 >

@@ -11,6 +11,34 @@ import Layout from "../layouts/Layout.astro";
       github: "https://github.com/iddan/react-spreadsheet#readme",
       docs: "https://iddan.github.io/react-spreadsheet/",
     }}
-    ,
-  /><ReactSpreadsheetComponent client:load /></Layout
+  />
+
+ <h2>Meeting the requirements:</h2>
+  <ul>
+    <li><b><u>Very poor documentation</u></b></li>
+    <li style={{ color: 'red'}}><b>Virtualization:</b> No</li>
+    <li style={{ color: 'red'}}><b>Large data sets:</b> No optimization for large data sets</li>
+    <li><b>TypeScript:</b> Yes</li>
+    <li style={{ color: 'red'}}><b>Merge cells:</b> No</li>
+    <li>
+      <b>Text formatting:</b> Likely only with CSS; documentation does not mention
+      it
+    </li>
+    <li><b>Custom elements:</b> Yes</li>
+    <li><b>Cell selection + copy, paste, delete:</b> Yes</li>
+    <li>
+      <b>Keyboard navigation:</b> Basic, you can navigate using arrow keys and copy
+      content
+    </li>
+    <li style={{ color: 'red'}}><b>Copy content as a table:</b> No</li>
+  </ul>
+
+  <p>
+  <b>Opinion: </b> Overall, it is very limited. You generally have to write everything yourself. It could possibly serve as a foundation for writing something on your own, but in our case, it is not worth it.
+</p>
+
+  <hr style={{ marginBlock: "2%" }} />
+
+
+  <ReactSpreadsheetComponent client:load /></Layout
 >
