@@ -1,0 +1,17 @@
+---
+import AGGridComponent from "../components/AGGrid/AGGrid";
+import Links from "../components/Links";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="agg grid"
+  ><h1>agg grid</h1>
+  <Links
+    links={{
+      npm: "https://www.npmjs.com/package/ag-grid-react",
+      github: "https://github.com/ag-grid/ag-grid",
+      docs: "https://www.ag-grid.com/react-data-grid/getting-started/",
+    }}
+    ,
+  /><AGGridComponent client:load /></Layout
+>

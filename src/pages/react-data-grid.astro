@@ -1,0 +1,16 @@
+---
+import Links from "../components/Links";
+import ReactDataGridComponent from "../components/ReactDataGrid/ReactDataGrid";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="react-grid"
+  ><h1>react-data-grid</h1><Links
+    links={{
+      npm: "https://www.npmjs.com/package/react-data-grid",
+      github: "https://github.com/adazzle/react-data-grid",
+      docs: "https://adazzle.github.io/react-data-grid/#/common-features",
+    }}
+    ,
+  /><ReactDataGridComponent client:load /></Layout
+>

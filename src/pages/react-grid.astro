@@ -1,0 +1,19 @@
+---
+import Links from "../components/Links";
+import ReactGridComponent from "../components/ReactGrid/ReactGrid";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="react-grid"
+  ><h1>react-grid</h1>
+  <Links
+    links={{
+      npm: "https://www.npmjs.com/package/@silevis/reactgrid",
+      github: "https://github.com/silevis/reactgrid",
+      docs: "https://reactgrid.com/examples/?utm_source=github&utm_medium=readme",
+    }}
+    ,
+  />
+
+  <ReactGridComponent client:load /></Layout
+>

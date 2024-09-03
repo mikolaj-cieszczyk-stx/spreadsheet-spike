@@ -1,0 +1,16 @@
+---
+import Links from "../components/Links";
+import ReactDatasheetGridComponent from "../components/ReactDatasheetGrid/ReactDatasheetGrid";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="react-grid"
+  ><h1>react-datasheet-grid</h1><Links
+    links={{
+      npm: "https://www.npmjs.com/package/react-datasheet-grid",
+      github: "https://github.com/nick-keller/react-datasheet-grid",
+      docs: "https://react-datasheet-grid.netlify.app/",
+    }}
+    ,
+  /><ReactDatasheetGridComponent client:load /></Layout
+>

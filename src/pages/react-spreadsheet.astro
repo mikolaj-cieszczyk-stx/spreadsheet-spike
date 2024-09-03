@@ -1,0 +1,16 @@
+---
+import Links from "../components/Links";
+import ReactSpreadsheetComponent from "../components/ReactSpreadsheet/ReactSpreadsheet";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="react-grid"
+  ><h1>react-spreadsheet</h1><Links
+    links={{
+      npm: "https://www.npmjs.com/package/react-spreadsheet",
+      github: "https://github.com/iddan/react-spreadsheet#readme",
+      docs: "https://iddan.github.io/react-spreadsheet/",
+    }}
+    ,
+  /><ReactSpreadsheetComponent client:load /></Layout
+>
