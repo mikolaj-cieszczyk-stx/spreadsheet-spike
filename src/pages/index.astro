@@ -5,6 +5,7 @@ import ReactSpreadsheet from "../components/ReactSpreadsheet/ReactSpreadsheet";
 import ReactDatasheetGrid from "../components/ReactDatasheetGrid/ReactDatasheetGrid";
 import HandsontableComponent from "../components/Handsontable/Handsontable";
 import CustomTableWithMergingPossibility from "../components/CustomTableWithMergingPossibility/CustomTableWithMergingPossibility";
+import AGGrid from "../components/AGGrid/AGGrid";
 import Layout from "../layouts/Layout.astro";
 import "../styles.css";
 ---
@@ -13,10 +14,11 @@ import "../styles.css";
   <main>
     <!-- <ReactSpreadsheet client:load /> -->
     <!-- <ReactGrid client:load /> -->
-    <ReactDataGrid client:load />
+    <!-- <ReactDataGrid client:load /> -->
     <!-- <ReactDatasheetGrid client:load /> -->
     <!-- <HandsontableComponent client:load /> -->
     <!-- <CustomTableWithMergingPossibility client:load /> -->
+    <AGGrid client:load />
   </main>
 </Layout>
 

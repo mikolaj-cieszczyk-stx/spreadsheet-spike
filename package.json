@@ -17,6 +17,7 @@
     "@silevis/reactgrid": "^4.1.8",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
+    "ag-grid-react": "^32.1.0",
     "astro": "^4.15.0",
     "handsontable": "^14.5.0",
     "react": "^18.3.1",
