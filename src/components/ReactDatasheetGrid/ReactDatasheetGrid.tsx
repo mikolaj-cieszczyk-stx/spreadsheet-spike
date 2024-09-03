@@ -14,8 +14,9 @@ import {
 import "react-datasheet-grid/dist/style.css";
 import type { Operation } from "react-datasheet-grid/dist/types";
 
+// Define the Row type
 type Row = {
-  id: number;
+  id: number | null;
   active: boolean;
   firstName: string | null;
   lastName: string | null;
@@ -29,6 +30,7 @@ type Row = {
   [key: `Column${number}`]: string | number | null | boolean | Date;
 };
 
+// Create dataset with appropriate types
 function createLargeDataset(numRows: number, numCols: number): Row[] {
   const rows: Row[] = [];
 
@@ -57,6 +59,7 @@ function createLargeDataset(numRows: number, numCols: number): Row[] {
   return rows;
 }
 
+// Create columns with correct types
 function createColumns(numCols: number): Column<Row>[] {
   const columns: Column<Row>[] = [
     {
@@ -108,26 +111,25 @@ function createColumns(numCols: number): Column<Row>[] {
 
   for (let i = 0; i < numCols; i++) {
     columns.push({
-      ...keyColumn<Row, `Column${i}`>(`Column${i}`, textColumn),
+      ...keyColumn<Row, `Column${number}`>(`Column${i}`, textColumn as any),
       title: `Column ${i + 1}`,
       id: `Column${i}`,
     });
   }
-
   return columns;
 }
 
+// Main component
 export default function ReactDatasheetGrid() {
-  const [data, setData] = useState<Row[]>(() => createLargeDataset(10000, 20));
+  const [data, setData] = useState<Row[]>(
+    () => createLargeDataset(10000, 1000) // Ensure this matches the number of columns
+  );
   const [columns] = useState<Column<Row>[]>(() => createColumns(1000));
 
-  const handleSetData = (
-    newValue: Record<string, any>[],
-    operations: Operation[]
-  ) => {
+  const handleSetData = (newValue: Row[], operations: Operation[]) => {
     console.log("New value:", newValue);
     console.log("Operations", operations);
-    setData(newValue as Row[]);
+    setData(newValue);
   };
 
   return (
